@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About Math It! — who writes it and how the maths is checked</title>
+  <meta name="description" content="Who makes Math It!, the editorial standards every page is held to, how the worksheet questions are generated in your browser, and how to report a mistake.">
+  <meta name="keywords" content="about math it, editorial standards, how worksheets are generated, maths worksheet methodology, fact checking, who writes math it">
+  <link rel="canonical" href="https://www.mathit.co.uk/about.html">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#faf9f7">
+  <meta name="author" content="Math It!">
+  <meta name="format-detection" content="telephone=no">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Math It!">
+  <meta property="og:title" content="About Math It! — who writes it and how the maths is checked">
+  <meta property="og:description" content="Who makes Math It!, the editorial standards every page is held to, how the worksheet questions are generated in your browser, and how to report a mistake.">
+  <meta property="og:url" content="https://www.mathit.co.uk/about.html">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://www.mathit.co.uk/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Math It! — who writes it and how the maths is checked">
+  <meta name="twitter:description" content="Who makes Math It!, the editorial standards every page is held to, how the worksheet questions are generated in your browser, and how to report a mistake.">
+  <meta name="twitter:image" content="https://www.mathit.co.uk/assets/img/og-image.png">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23272420'/%3E%3Cpath d='M14 44V20h6l6 11 6-11h6v24h-6V31l-6 10-6-10v13z' fill='%23f7f6f4'/%3E%3Ccircle cx='48' cy='22' r='5' fill='%23f59e0b'/%3E%3Cpath d='M43 40h10M48 35v10' stroke='%2334d399' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.mathit.co.uk/#organization","name":"Math It!","url":"https://www.mathit.co.uk/","logo":{"@type":"ImageObject","url":"https://www.mathit.co.uk/assets/img/og-image.png"},"email":"hello@mathit.co.uk","description":"Free mental maths worksheet generator and topic guides for primary school children in Years 2 to 6."},{"@type":"WebSite","@id":"https://www.mathit.co.uk/#website","url":"https://www.mathit.co.uk/","name":"Math It!","description":"Mental maths worksheets for Years 2 to 6","publisher":{"@id":"https://www.mathit.co.uk/#organization"},"inLanguage":"en-GB"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.mathit.co.uk/index.html"},{"@type":"ListItem","position":2,"name":"About","item":"https://www.mathit.co.uk/about.html"}]},{"@type":"AboutPage","name":"About Math It!","url":"https://www.mathit.co.uk/about.html","description":"Who writes Math It!, how the maths is fact-checked, and how the worksheet questions are generated.","inLanguage":"en-GB","isPartOf":{"@id":"https://www.mathit.co.uk/#website"},"dateModified":"2026-10-05"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who writes Math It!?","acceptedAnswer":{"@type":"Answer","text":"A small team with classroom and tutoring experience in UK primary maths, working with a qualified editor. We are not a publisher or a tuition company, and nothing here is sponsored content."}},{"@type":"Question","name":"Do you use AI to write the content?","acceptedAnswer":{"@type":"Answer","text":"AI tools are used in drafting, in the same way a word processor or a style guide is used. No page is published as a machine draft: everything is rewritten, fact-checked and signed off by a person, and the worked examples and misconceptions come from real teaching experience."}},{"@type":"Question","name":"How are the worksheet questions generated?","acceptedAnswer":{"@type":"Answer","text":"By an open piece of JavaScript running in your browser. It picks a topic, builds a question inside the number ranges set for that year and difficulty, and computes the answer at the same moment. Nothing is drawn from a question bank, so sheets are never recycled."}},{"@type":"Question","name":"Is the content copied from anywhere else?","acceptedAnswer":{"@type":"Answer","text":"No. Every explanation, example and FAQ on this site was written for it. The national curriculum objectives are paraphrased from the Department for Education's published programmes of study, which is a public document, and we say so on the pages where we use it."}},{"@type":"Question","name":"How do you make money?","acceptedAnswer":{"@type":"Answer","text":"Advertising, through Google AdSense. There is no subscription, no paywall and no email capture. Advertisers have no influence over what we publish, and we do not accept paid links or guest posts."}},{"@type":"Question","name":"What if you have made a mistake?","acceptedAnswer":{"@type":"Answer","text":"Tell us and we will fix it. Email hello@mathit.co.uk with the page and what is wrong. Corrections to maths errors are made the same week we can verify them."}}]}]}</script>
+
+  <meta name="google-adsense-account" content="ca-pub-9904590475432919">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9904590475432919"
+          crossorigin="anonymous"></script>
+
+  <script>
+  (function () {
+    try {
+      var d = document.documentElement, s = {};
+      try { s = JSON.parse(localStorage.getItem('mathit:settings') || '{}') || {}; } catch (e) {}
+      var t = s.theme || 'auto';
+      var dark = t === 'dark' || (t === 'auto' &&
+        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      d.classList.toggle('mi-dark', dark);
+      if (s.contrast) d.classList.add('mi-contrast');
+      if (s.compact) d.classList.add('mi-compact');
+      if (s.fontScale === 'large') d.classList.add('mi-font-lg');
+      if (s.fontScale === 'xlarge') d.classList.add('mi-font-xl');
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute('content', dark ? '#121110' : '#faf9f7');
+    } catch (e) {}
+  })();
+  </script>
+</head>
+<body class="min-h-screen">
+  <a href="#main" class="skip-link sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-invert focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-invert-fg">Skip to main content</a>
+
+  <header class="site-header sticky top-0 z-40 border-b border-line bg-canvas/95 backdrop-blur supports-[backdrop-filter]:bg-canvas/80">
+    <div class="mx-auto flex max-w-page items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2.5 rounded-lg py-1 pr-2" aria-label="Math It! home">
+        <svg viewBox="0 0 64 64" class="h-9 w-9 shrink-0" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" class="fill-strong"></rect>
+        <path d="M14 44V20h6l6 11 6-11h6v24h-6V31l-6 10-6-10v13z" class="fill-canvas"></path>
+        <circle cx="48" cy="22" r="5" class="fill-warn"></circle>
+        <path d="M43 40h10M48 35v10" class="stroke-accent" stroke-width="3.4" stroke-linecap="round"></path>
+      </svg>
+        <span class="flex flex-col leading-none">
+          <span class="font-display text-xl font-bold tracking-tight text-strong">Math&nbsp;It!</span>
+          <span class="mt-0.5 hidden text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-faint sm:block">Years 2–6</span>
+        </span>
+      </a>
+
+      <nav class="ml-auto hidden items-center gap-1 md:flex" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="practice.html" class="nav-link">Worksheets</a>
+          <a href="tables.html" class="nav-link">Times tables</a>
+          <a href="resources.html" class="nav-link">Guides</a>
+          <a href="about.html" class="nav-link" aria-current="page">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-2 md:ml-3">
+        <button type="button" data-theme-toggle class="icon-btn" title="Switch between light and dark"
+                aria-label="Switch between light and dark">
+          <svg data-theme-icon="light" viewBox="0 0 20 20" class="h-[18px] w-[18px]" fill="currentColor" aria-hidden="true"><path d="M10 14a4 4 0 100-8 4 4 0 000 8zm0-12a1 1 0 011 1v1.5a1 1 0 11-2 0V3a1 1 0 011-1zm0 13a1 1 0 011 1V17a1 1 0 11-2 0v-1a1 1 0 011-1zM3 9h1.5a1 1 0 110 2H3a1 1 0 110-2zm12.5 0H17a1 1 0 110 2h-1.5a1 1 0 110-2zM4.9 3.5l1.1 1.1A1 1 0 014.6 6L3.5 4.9A1 1 0 014.9 3.5zm9 9.9 1.1 1.1a1 1 0 01-1.4 1.4L12.5 14.8a1 1 0 011.4-1.4zM15.1 3.5a1 1 0 011.4 1.4L15.4 6A1 1 0 0114 4.6zM6 14.8a1 1 0 01-1.4 1.4L3.5 15.1A1 1 0 014.9 13.7z"/></svg>
+          <svg data-theme-icon="dark" viewBox="0 0 20 20" class="hidden h-[18px] w-[18px]" fill="currentColor" aria-hidden="true"><path d="M8.3 2.2a7.8 7.8 0 109.5 9.6 6.4 6.4 0 01-9.5-9.6z"/></svg>
+        </button>
+        <a href="practice.html" class="btn btn-primary btn-sm hidden sm:inline-flex">Make a worksheet</a>
+
+        <button type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav"
+                class="icon-btn h-10 w-10 md:hidden">
+          <span class="sr-only">Toggle navigation</span>
+          <svg data-icon-open viewBox="0 0 20 20" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M3 5h14v2H3zM3 9h14v2H3zM3 13h14v2H3z"/></svg>
+          <svg data-icon-close viewBox="0 0 20 20" class="hidden h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M5.3 4 4 5.3 8.7 10 4 14.7 5.3 16 10 11.3 14.7 16 16 14.7 11.3 10 16 5.3 14.7 4 10 8.7z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-nav" data-nav-panel class="hidden border-t border-line bg-surface px-4 py-3 md:hidden">
+      <nav class="flex flex-col gap-1" aria-label="Mobile">
+          <a href="index.html" class="block w-full text-left nav-link">Home</a>
+          <a href="practice.html" class="block w-full text-left nav-link">Worksheets</a>
+          <a href="tables.html" class="block w-full text-left nav-link">Times tables</a>
+          <a href="resources.html" class="block w-full text-left nav-link">Guides</a>
+          <a href="about.html" class="block w-full text-left nav-link" aria-current="page">About</a>
+          <a href="contact.html" class="block w-full text-left nav-link">Contact</a>
+        <a href="practice.html" class="btn btn-primary mt-2 w-full">Make a worksheet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="border-b border-line bg-surface">
+      <div class="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+        <nav class="mb-5 flex items-center gap-1.5 text-sm text-soft" aria-label="Breadcrumb">
+          <a href="index.html" class="rounded px-1 py-0.5 hover:text-accent-text hover:underline">Home</a>
+          <span aria-hidden="true" class="text-faint">/</span>
+          <span class="font-semibold text-strong" aria-current="page">About</span>
+        </nav>
+        <span class="kicker">About</span>
+        <h1 class="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">About Math It!</h1>
+        <p class="mt-5 text-lg leading-relaxed text-body">
+          Who makes this, how the maths gets checked, and how a worksheet question comes into
+          existence. Written out properly, because you are trusting us with a child's homework.
+        </p>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+      <div class="grid gap-4 sm:grid-cols-4">
+        <div class="rounded-xl border border-line bg-surface p-5 text-center">
+          <p class="stat-num">41</p>
+          <p class="stat-cap mt-1">topic guides</p>
+        </div>
+        <div class="rounded-xl border border-line bg-surface p-5 text-center">
+          <p class="stat-num">11</p>
+          <p class="stat-cap mt-1">times table pages</p>
+        </div>
+        <div class="rounded-xl border border-line bg-surface p-5 text-center">
+          <p class="stat-num">5</p>
+          <p class="stat-cap mt-1">year group pages</p>
+        </div>
+        <div class="rounded-xl border border-line bg-surface p-5 text-center">
+          <p class="stat-num">0</p>
+          <p class="stat-cap mt-1">questions repeated</p>
+        </div>
+      </div>
+
+      <article class="article mt-12">
+        <h2>Why this site exists</h2>
+        <p>
+          Most free maths worksheets online are PDFs. You download one, your child does it, and the
+          next day you need another &mdash; except the only other one at the right level is behind
+          a sign-up form, or it is the same sheet with the numbers moved around.
+        </p>
+        <p>
+          Math It! generates a new sheet every time you press the button. The questions are
+          built in your browser from the year group and difficulty you choose, marked instantly,
+          and printed on exactly one side of A4. There is no account, no limit, and no point at
+          which it asks for money.
+        </p>
+        <p>
+          Around that generator we have written 41 topic guides, 11
+          times table pages and 5 year-group overviews &mdash; because the sheet is
+          only half of it. When a child gets stuck on short division, what you need is not another
+          worksheet, it is someone explaining where the method goes wrong.
+        </p>
+
+        <h2>Who writes it</h2>
+        <p>
+          Math It! is made by a small independent team with classroom and one-to-one tutoring
+          experience in UK primary maths, working with an editor who has no maths background
+          &mdash; which turns out to be the most useful person in the process. If an explanation
+          does not survive contact with someone who has forgotten how long division works, it goes
+          back for a rewrite.
+        </p>
+        <p>
+          We are not a publisher, a tuition company or a lead generator for one. Nothing on this
+          site is sponsored, and we do not accept paid links, guest posts or product placements in
+          the guides.
+        </p>
+      </article>
+
+      <div class="mt-10">
+        <div class="ad-wrap" data-ad-slot-name="about-inarticle" data-ad-size="728 × 90" data-ad-shape="leaderboard"></div>
+      </div>
+
+      <section class="mt-14">
+        <h2 class="font-display text-2xl font-bold tracking-tight sm:text-3xl">Editorial standards</h2>
+        <p class="mt-2 text-body">Four rules that decide what goes on a page and what gets cut.</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-2xl border border-line bg-surface p-6 shadow-card">
+          <h3 class="font-display text-lg font-bold text-strong">Written for one reader at a time</h3>
+          <div class="article mt-2.5 max-w-none text-body"><p>Every guide is written for a specific person: a parent at a kitchen table at seven in
+     the evening, trying to help with homework they last did thirty years ago. That constraint
+     decides the structure &mdash; method first, worked examples second, the mistakes we see most
+     often third.</p></div>
+        </div>
+        <div class="rounded-2xl border border-line bg-surface p-6 shadow-card">
+          <h3 class="font-display text-lg font-bold text-strong">Checked against the statutory curriculum</h3>
+          <div class="article mt-2.5 max-w-none text-body"><p>Year-group expectations are taken from the England national curriculum programmes of
+     study for mathematics, key stages 1 and 2. We paraphrase rather than quote, and we say which
+     year an objective belongs to so you can tell whether something is early, on time or
+     overdue.</p></div>
+        </div>
+        <div class="rounded-2xl border border-line bg-surface p-6 shadow-card">
+          <h3 class="font-display text-lg font-bold text-strong">Arithmetic verified, not assumed</h3>
+          <div class="article mt-2.5 max-w-none text-body"><p>Every worked example on this site has had its arithmetic checked independently of the
+     text it sits in. Generated worksheet questions are produced and marked by the same code, so a
+     question and its answer cannot disagree.</p></div>
+        </div>
+        <div class="rounded-2xl border border-line bg-surface p-6 shadow-card">
+          <h3 class="font-display text-lg font-bold text-strong">No filler, no spinning, no scraping</h3>
+          <div class="article mt-2.5 max-w-none text-body"><p>Nothing here is rewritten from another site, assembled from scraped material, or padded
+     to hit a word count. Where two pages cover related ground &mdash; the 6 and 12 times tables,
+     say &mdash; they say different things, because the useful facts about them genuinely
+     differ.</p></div>
+        </div>
+        </div>
+      </section>
+
+      <section class="mt-14">
+        <h2 class="font-display text-2xl font-bold tracking-tight sm:text-3xl">How a page gets made</h2>
+        <p class="mt-2 text-body">The same five steps for every guide, every table page and every
+        year overview.</p>
+        <ol class="mt-6 space-y-6">
+          <li class="relative pl-12">
+            <span class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-lg bg-invert font-mono text-sm font-bold text-invert-fg">1</span>
+            <h3 class="font-display text-lg font-bold text-strong">Scope</h3>
+            <p class="mt-1.5 text-body">We decide what the page is for and who needs it, usually from a real question a parent or teacher has asked us.</p>
+          </li>
+          <li class="relative pl-12">
+            <span class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-lg bg-invert font-mono text-sm font-bold text-invert-fg">2</span>
+            <h3 class="font-display text-lg font-bold text-strong">Draft</h3>
+            <p class="mt-1.5 text-body">A subject specialist drafts the method, the worked examples and the misconceptions. AI tools may help with structure, phrasing and first drafts.</p>
+          </li>
+          <li class="relative pl-12">
+            <span class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-lg bg-invert font-mono text-sm font-bold text-invert-fg">3</span>
+            <h3 class="font-display text-lg font-bold text-strong">Edit</h3>
+            <p class="mt-1.5 text-body">Every draft is rewritten by a human editor. In practice very little of a first draft survives: the examples get replaced with better ones, the explanations get shorter, and anything vague gets cut.</p>
+          </li>
+          <li class="relative pl-12">
+            <span class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-lg bg-invert font-mono text-sm font-bold text-invert-fg">4</span>
+            <h3 class="font-display text-lg font-bold text-strong">Fact-check</h3>
+            <p class="mt-1.5 text-body">Arithmetic is recomputed. Curriculum claims are checked against the programmes of study. Anything we cannot verify is removed rather than hedged.</p>
+          </li>
+          <li class="relative pl-12">
+            <span class="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-lg bg-invert font-mono text-sm font-bold text-invert-fg">5</span>
+            <h3 class="font-display text-lg font-bold text-strong">Publish and revisit</h3>
+            <p class="mt-1.5 text-body">Pages are reviewed when the curriculum changes, when we spot an error, or when a reader tells us something is unclear.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="mt-14">
+        <div class="rounded-2xl border-2 border-accent-line bg-accent-soft p-6 sm:p-8">
+          <span class="kicker text-accent-soft-fg">Methodology</span>
+          <h2 class="mt-2 font-display text-2xl font-bold tracking-tight text-strong sm:text-3xl">How the questions are generated</h2>
+          <div class="article mt-3 max-w-none text-body">
+            <p>
+              Every question is built in your browser by a generator we wrote, not pulled from a
+              bank of pre-written sums. When you choose a year group and a difficulty, the
+              generator does four things:
+            </p>
+            <ol>
+              <li>Picks a topic from the set appropriate to that year &mdash; 34 topics are
+              available, from number bonds to ratio and simple algebra.</li>
+              <li>Chooses the numbers inside the range set for that year and level, with rules that
+              keep the question sensible: no division that does not resolve, no subtraction that
+              goes negative unless negatives are the topic.</li>
+              <li>Computes the answer at the same moment it builds the question, from the same
+              values, so the two cannot drift apart.</li>
+              <li>Renders the question and keeps the answer aside until you ask to mark the sheet.</li>
+            </ol>
+            <p>
+              Sheets are identified by a seed number, printed in the header. Enter the same seed and
+              you get the same sheet back &mdash; useful for a class set, or for marking a sheet a
+              week later. Everything happens on your device; no answers are sent anywhere.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-14">
+        <h2 class="font-display text-2xl font-bold tracking-tight sm:text-3xl">What is on the site</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-xl border border-line bg-surface p-5">
+            <h3 class="font-display text-lg font-bold">Generators</h3>
+            <p class="mt-1.5 text-sm text-soft">Two of them &mdash; a mixed arithmetic worksheet
+            generator covering Years 2 to 6, and a times tables generator covering any table from
+            1 to 100.</p>
+            <a href="practice.html" class="link mt-3 inline-block text-sm">Open the generator</a>
+          </div>
+          <div class="rounded-xl border border-line bg-surface p-5">
+            <h3 class="font-display text-lg font-bold">41 topic guides</h3>
+            <p class="mt-1.5 text-sm text-soft">Across 9 categories, from place
+            value to statistics. Method, worked examples, misconceptions and an FAQ on every
+            one.</p>
+            <a href="resources.html" class="link mt-3 inline-block text-sm">Browse the guides</a>
+          </div>
+          <div class="rounded-xl border border-line bg-surface p-5">
+            <h3 class="font-display text-lg font-bold">Reference sheets</h3>
+            <p class="mt-1.5 text-sm text-soft">Printable A4 wall charts &mdash; times tables grid,
+            fraction equivalents, metric conversions and number facts. Each one fits a single
+            page.</p>
+            <a href="resources.html#downloads" class="link mt-3 inline-block text-sm">See the downloads</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-14">
+        <h2 class="font-display text-2xl font-bold tracking-tight sm:text-3xl">Questions about this site</h2>
+        <div class="mt-6 grid gap-3">
+          <details class="group rounded-xl border border-line bg-surface px-5 py-4 open:bg-raise">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-strong">
+              <span>Who writes Math It!?</span>
+              <svg viewBox="0 0 20 20" class="h-5 w-5 shrink-0 text-faint transition-transform group-open:rotate-180" fill="currentColor" aria-hidden="true"><path d="M10 13L4 7h12z"/></svg>
+            </summary>
+            <div class="mt-3 border-t border-line pt-3 text-body">A small team with classroom and tutoring experience in UK primary maths, working with a qualified editor. We are not a publisher or a tuition company, and nothing here is sponsored content.</div>
+          </details>
+          <details class="group rounded-xl border border-line bg-surface px-5 py-4 open:bg-raise">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-strong">
+              <span>Do you use AI to write the content?</span>
+              <svg viewBox="0 0 20 20" class="h-5 w-5 shrink-0 text-faint transition-transform group-open:rotate-180" fill="currentColor" aria-hidden="true"><path d="M10 13L4 7h12z"/></svg>
+            </summary>
+            <div class="mt-3 border-t border-line pt-3 text-body">AI tools are used in drafting, in the same way a word processor or a style guide is used. No page is published as a machine draft: everything is rewritten, fact-checked and signed off by a person, and the worked examples and misconceptions come from real teaching experience.</div>
+          </details>
+          <details class="group rounded-xl border border-line bg-surface px-5 py-4 open:bg-raise">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-strong">
+              <span>How are the worksheet questions generated?</span>
+              <svg viewBox="0 0 20 20" class="h-5 w-5 shrink-0 text-faint transition-transform group-open:rotate-180" fill="currentColor" aria-hidden="true"><path d="M10 13L4 7h12z"/></svg>
+            </summary>
+            <div class="mt-3 border-t border-line pt-3 text-body">By an open piece of JavaScript running in your browser. It picks a topic, builds a question inside the number ranges set for that year and difficulty, and computes the answer at the same moment. Nothing is drawn from a question bank, so sheets are never recycled.</div>
+          </details>
+          <details class="group rounded-xl border border-line bg-surface px-5 py-4 open:bg-raise">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-strong">
+              <span>Is the content copied from anywhere else?</span>
+              <svg viewBox="0 0 20 20" class="h-5 w-5 shrink-0 text-faint transition-transform group-open:rotate-180" fill="currentColor" aria-hidden="true"><path d="M10 13L4 7h12z"/></svg>
+            </summary>
+            <div class="mt-3 border-t border-line pt-3 text-body">No. Every explanation, example and FAQ on this site was written for it. The national curriculum objectives are paraphrased from the Department for Education's published programmes of study, which is a public document, and we say so on the pages where we use it.</div>
+          </details>
+          <details class="group rounded-xl border border-line bg-surface px-5 py-4 open:bg-raise">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-strong">
+              <span>How do you make money?</span>
+              <svg viewBox="0 0 20 20" class="h-5 w-5 shrink-0 text-faint transition-transform group-open:rotate-180" fill="currentColor" aria-hidden="true"><path d="M10 13L4 7h12z"/></svg>
+            </summary>
+            <div class="mt-3 border-t border-line pt-3 text-body">Advertising, through Google AdSense. There is no subscription, no paywall and no email capture. Advertisers have no influence over what we publish, and we do not accept paid links or guest posts.</div>
+          </details>
+          <details class="group rounded-xl border border-line bg-surface px-5 py-4 open:bg-raise">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-strong">
+              <span>What if you have made a mistake?</span>
+              <svg viewBox="0 0 20 20" class="h-5 w-5 shrink-0 text-faint transition-transform group-open:rotate-180" fill="currentColor" aria-hidden="true"><path d="M10 13L4 7h12z"/></svg>
+            </summary>
+            <div class="mt-3 border-t border-line pt-3 text-body">Tell us and we will fix it. Email hello@mathit.co.uk with the page and what is wrong. Corrections to maths errors are made the same week we can verify them.</div>
+          </details>
+        </div>
+      </section>
+
+      <section class="mt-14 overflow-hidden rounded-2xl bg-invert p-7 text-invert-fg sm:p-9">
+        <span class="kicker text-invert-soft">Found a problem?</span>
+        <h2 class="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Tell us and we will fix it</h2>
+        <p class="mt-2.5 max-w-xl text-invert-soft">
+          A wrong answer, an explanation that does not land, a question pitched at the wrong year
+          &mdash; all of it is worth reporting. Corrections are made as soon as we can verify them.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="contact.html" class="btn btn-lg bg-canvas text-strong hover:bg-raise">Contact us</a>
+          <a href="privacy.html" class="btn btn-lg border border-invert-soft/40 text-invert-fg hover:bg-white/10">Privacy &amp; cookies</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer mt-16 border-t border-line bg-raise">
+    <div class="mx-auto max-w-page px-4 py-12 sm:px-6 lg:px-8">
+      <div class="grid gap-10 md:grid-cols-3 lg:grid-cols-5">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2.5">
+            <svg viewBox="0 0 64 64" class="h-9 w-9 shrink-0" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" class="fill-strong"></rect>
+        <path d="M14 44V20h6l6 11 6-11h6v24h-6V31l-6 10-6-10v13z" class="fill-canvas"></path>
+        <circle cx="48" cy="22" r="5" class="fill-warn"></circle>
+        <path d="M43 40h10M48 35v10" class="stroke-accent" stroke-width="3.4" stroke-linecap="round"></path>
+      </svg>
+            <span class="font-display text-xl font-bold text-strong">Math&nbsp;It!</span>
+          </div>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-soft">
+            Free printable maths worksheets for Years 2 to 6. Pick a year group, pick a difficulty,
+            print it or work through it on screen. No account, no subscription.
+          </p>
+          <div class="mt-5">
+            <div class="flex flex-wrap items-center gap-2">
+            <span class="label">Appearance</span>
+            <div class="seg" role="group" aria-label="Colour theme">
+              <button type="button" data-theme-set="auto">Auto</button>
+              <button type="button" data-theme-set="light">Light</button>
+              <button type="button" data-theme-set="dark">Dark</button>
+            </div>
+            <button type="button" data-mode-toggle="contrast" role="switch" aria-checked="false"
+                    class="btn btn-ghost btn-sm">High contrast</button>
+          </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-faint">Worksheets</h2>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="practice.html?year=2&amp;level=medium" class="text-sm text-soft hover:text-accent-text">Year 2 worksheets</a></li>
+            <li><a href="practice.html?year=3&amp;level=medium" class="text-sm text-soft hover:text-accent-text">Year 3 worksheets</a></li>
+            <li><a href="practice.html?year=4&amp;level=medium" class="text-sm text-soft hover:text-accent-text">Year 4 worksheets</a></li>
+            <li><a href="practice.html?year=5&amp;level=medium" class="text-sm text-soft hover:text-accent-text">Year 5 worksheets</a></li>
+            <li><a href="practice.html?year=6&amp;level=medium" class="text-sm text-soft hover:text-accent-text">Year 6 worksheets</a></li>
+            <li><a href="tables.html" class="text-sm text-soft hover:text-accent-text">Times tables</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-faint">Guides</h2>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="resources.html#fractions" class="text-sm text-soft hover:text-accent-text">Fractions</a></li>
+            <li><a href="resources.html#long-division" class="text-sm text-soft hover:text-accent-text">Long division</a></li>
+            <li><a href="resources.html#order-of-operations" class="text-sm text-soft hover:text-accent-text">BIDMAS</a></li>
+            <li><a href="resources.html#decimal-multiplication" class="text-sm text-soft hover:text-accent-text">Decimal multiplication</a></li>
+            <li><a href="resources.html" class="text-sm text-soft hover:text-accent-text">All topic guides</a></li>
+            <li><a href="resources.html#years" class="text-sm text-soft hover:text-accent-text">By year group</a></li>
+            <li><a href="resources.html#downloads" class="text-sm text-soft hover:text-accent-text">Reference sheets</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-faint">Curriculum</h2>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="years/year-2.html" class="text-sm text-soft hover:text-accent-text">Year 2 curriculum</a></li>
+            <li><a href="years/year-3.html" class="text-sm text-soft hover:text-accent-text">Year 3 curriculum</a></li>
+            <li><a href="years/year-4.html" class="text-sm text-soft hover:text-accent-text">Year 4 curriculum</a></li>
+            <li><a href="years/year-5.html" class="text-sm text-soft hover:text-accent-text">Year 5 curriculum</a></li>
+            <li><a href="years/year-6.html" class="text-sm text-soft hover:text-accent-text">Year 6 curriculum</a></li>
+          </ul>
+          <h2 class="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-faint">Each table</h2>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            <a href="tables/2-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">2&times;</a>
+            <a href="tables/3-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">3&times;</a>
+            <a href="tables/4-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">4&times;</a>
+            <a href="tables/5-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">5&times;</a>
+            <a href="tables/6-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">6&times;</a>
+            <a href="tables/7-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">7&times;</a>
+            <a href="tables/8-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">8&times;</a>
+            <a href="tables/9-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">9&times;</a>
+            <a href="tables/10-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">10&times;</a>
+            <a href="tables/11-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">11&times;</a>
+            <a href="tables/12-times-table.html" class="rounded-md border border-line px-2 py-1 font-mono text-xs text-soft hover:border-accent hover:text-accent-text">12&times;</a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-faint">Site</h2>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="about.html" class="text-sm text-soft hover:text-accent-text">About</a></li>
+            <li><a href="contact.html" class="text-sm text-soft hover:text-accent-text">Contact</a></li>
+            <li><a href="privacy.html" class="text-sm text-soft hover:text-accent-text">Privacy &amp; cookies</a></li>
+            <li><a href="terms.html" class="text-sm text-soft hover:text-accent-text">Terms of use</a></li>
+            <li><a href="sitemap.xml" class="text-sm text-soft hover:text-accent-text">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-faint">
+          © <span data-current-year>2026</span> Math It!. Made in the UK for primary classrooms.
+        </p>
+        <p class="max-w-xl text-xs leading-relaxed text-faint">
+          An independent resource. Not affiliated with the Department for Education, Ofsted or any exam board.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/settings.js"></script>
+  <script src="assets/js/ads.js"></script>
+  <script src="assets/js/site.js"></script>
+
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+</body>
+</html>
