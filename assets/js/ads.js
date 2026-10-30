@@ -44,13 +44,13 @@
   const AdsConfig = {
 
     /** Master switch. Keep false while placeholders are fine. */
-    enabled: false,
+    enabled: true,
 
     /** Your AdSense publisher ID, e.g. 'ca-pub-1234567890123456'. */
     publisherId: 'ca-pub-9904590475432919',
 
     /** Inject the adsbygoogle.js loader automatically. */
-    loadScript: false,
+    loadScript: true,
 
     /** Set true if you only use AdSense "Auto ads" (no manual units). */
     autoAdsOnly: false,
@@ -73,14 +73,14 @@
      *   { customHtml:'<ins …></ins>' }
      */
     slots: {
-      'home-leaderboard':         '',   // below the hero, 970×90 / responsive
-      'home-infeed':              '',   // between content blocks on the home page
-      'practice-sidebar-top':     '',   // 300×250 beside the worksheet
-      'practice-sidebar-bottom':  '',   // 300×600 skyscraper beside the worksheet
-      'practice-footer':          '',   // responsive unit under the worksheet
-      'resources-inarticle':      '',   // in-article unit on the resource hub
-      'resources-sidebar':        '',   // 300×250 in the resources sidebar
-      'generic':                  '',   // fallback for any unnamed position
+      'home-leaderboard':         '7907701095',   // below the hero, 970×90 / responsive
+      'home-infeed':              '4831190589',   // between content blocks on the home page
+      'practice-sidebar-top':     '1254662839',   // 300×250 beside the worksheet
+      'practice-sidebar-bottom':  '8426575843',   // 300×600 skyscraper beside the worksheet
+      'practice-footer':          '7648925619',   // responsive unit under the worksheet
+      'resources-inarticle':      '6481816626',   // in-article unit on the resource hub
+      'resources-sidebar':        '1254662839',   // 300×250 in the resources sidebar
+      'generic':                  '7907701095',   // fallback for any unnamed position
     },
   };
 
