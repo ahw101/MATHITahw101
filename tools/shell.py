@@ -2,7 +2,7 @@
 """Shared HTML shell for Math It! — head, theme boot, header, footer, ad slots."""
 
 SITE_NAME = "Math It!"
-SITE_URL = "https://www.mathit.co.uk"          # ← change once, rebuild, done
+SITE_URL = "https://mathit-edward.netlify.app"
 SITE_TAGLINE = "Mental maths worksheets for Years 2 to 6"
 CONTACT_EMAIL = "hello@mathit.co.uk"
 
@@ -104,7 +104,7 @@ def _nav_links(current, mobile=False, pre=""):
 def _search_form(input_id):
     return f"""<form action="https://www.google.com/search" method="get" role="search"
         class="site-search">
-      <input type="hidden" name="sitesearch" value="www.mathit.co.uk">
+      <input type="hidden" name="sitesearch" value="mathit-edward.netlify.app">
       <label class="sr-only" for="{input_id}">Search Math It!</label>
       <input id="{input_id}" type="search" name="q" placeholder="Search"
              class="site-search-input">

@@ -58,7 +58,7 @@ BODY = f"""  <main id="main" class="mx-auto max-w-page px-4 py-6 sm:px-6 lg:px-8
     <header class="print-only ws-head sheet-head">
       <div class="ws-head-id">
         <p class="ws-head-title" data-sheet-title>Times tables</p>
-        <p class="ws-head-sub">Math It! · Sheet <span data-sheet-id>#000000</span> · <span data-print-date></span> · mathit.co.uk</p>
+        <p class="ws-head-sub">Math It! · Sheet <span data-sheet-id>#000000</span> · <span data-print-date></span> · mathit-edward.netlify.app</p>
       </div>
       <div class="ws-head-fields">
         <span class="ws-field"><b>Name</b><i></i></span>

@@ -264,7 +264,7 @@ suite rather than written by hand.
 ### 4.1 Before you upload
 
 1. **Change the domain.** `SITE_URL` at the top of `tools/shell.py` (currently
-   `https://www.mathit.co.uk`) feeds every canonical, Open Graph tag, JSON-LD block and
+  `https://mathit-edward.netlify.app`) feeds every canonical, Open Graph tag, JSON-LD block and
    the sitemap. Change it once, then `npm run build:html`.
 2. **Change the contact address.** `CONTACT_EMAIL` in the same file.
 3. **Fill in `ads.txt`** with your publisher ID, and `assets/js/ads.js` (see §3).
@@ -303,7 +303,7 @@ pretty URLs work.
 ```nginx
 server {
   listen 443 ssl http2;
-  server_name www.mathit.co.uk;
+  server_name mathit-edward.netlify.app;
   root /var/www/mathit;
   index index.html;
 

@@ -77,6 +77,11 @@
 }
 
 @media print {
+  body > :not(main):not(script):not(style) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
   .ad-wrap,
   .ad-slot,
   ins.adsbygoogle,

@@ -696,7 +696,7 @@
       headHtml({
         title: title,
         sub: 'Math It! · Sheet #' + seed + ' · ' + date +
-             (total > 1 ? ' · copy ' + index + ' of ' + total : '') + ' · mathit.co.uk',
+             (total > 1 ? ' · copy ' + index + ' of ' + total : '') + ' · mathit-edward.netlify.app',
         total: sheet.questions.length,
       }) +
       '<div class="q-grid">' + rows + '</div>' +
@@ -712,7 +712,7 @@
           '<p class="ws-head-sub">' +
           (isTables ? tablesLabelShort(s.tables)
                     : ('Year ' + s.year + ' · ' + S.LEVEL_LABELS[s.level])) +
-          ' · ' + sheet.questions.length + ' questions · mathit.co.uk</p>' +
+          ' · ' + sheet.questions.length + ' questions · mathit-edward.netlify.app</p>' +
         '</div>' +
       '</header>' +
       '<div class="ak-grid">' + answerKeyHtml(sheet) + '</div>' +
@@ -929,6 +929,7 @@
         else if (key === 'timerMode' || key === 'countdownMins') resetTimer(true);
 
         paintMeta();
+        syncQuickSwitch();
         syncDrawerControls();
         if (global.MathIt.syncModeControls) global.MathIt.syncModeControls();
       });
@@ -994,6 +995,21 @@
     paintTimer();
   }
 
+  function syncQuickSwitch() {
+    qsa('[data-quick-year]').forEach(function (link) {
+      const year = Number(link.getAttribute('data-quick-year'));
+      link.href = 'practice.html?year=' + year + '&level=' + state.settings.level;
+      if (year === state.settings.year) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    qsa('[data-quick-level]').forEach(function (link) {
+      const level = link.getAttribute('data-quick-level');
+      link.href = 'practice.html?year=' + state.settings.year + '&level=' + level;
+      if (level === state.settings.level) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
   /* =================================================================
      Wiring
      ================================================================= */
@@ -1035,6 +1051,7 @@
     buildTopicList();
     buildTablesPicker();
     syncDrawerControls();
+    syncQuickSwitch();
     bindActions(D);
     bindShortcuts();
     bootPrintMenu();

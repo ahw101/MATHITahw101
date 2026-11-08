@@ -100,7 +100,8 @@
     const s = Object.assign({}, DEFAULTS, input || {});
     s.year = YEARS.indexOf(Number(s.year)) !== -1 ? Number(s.year) : DEFAULTS.year;
     s.level = LEVELS.indexOf(s.level) !== -1 ? s.level : DEFAULTS.level;
-    s.count = [12, 18, 24, 36, 48, 60].indexOf(Number(s.count)) !== -1 ? Number(s.count) : 36;
+    const count = Number(s.count);
+    s.count = Number.isFinite(count) ? Math.max(1, Math.min(60, Math.round(count))) : DEFAULTS.count;
     s.fontScale = ['normal', 'large', 'xlarge'].indexOf(s.fontScale) !== -1 ? s.fontScale : 'normal';
     s.theme = ['auto', 'light', 'dark'].indexOf(s.theme) !== -1 ? s.theme : 'auto';
     s.showKey = !!s.showKey;

@@ -53,7 +53,7 @@ BODY = f"""  <main id="main" class="mx-auto max-w-page px-4 py-6 sm:px-6 lg:px-8
     <header class="print-only ws-head sheet-head">
       <div class="ws-head-id">
         <p class="ws-head-title" data-sheet-title>Mental maths worksheet</p>
-        <p class="ws-head-sub">Math It! · Sheet <span data-sheet-id>#000000</span> · <span data-print-date></span> · mathit.co.uk</p>
+        <p class="ws-head-sub">Math It! · Sheet <span data-sheet-id>#000000</span> · <span data-print-date></span> · mathit-edward.netlify.app</p>
       </div>
       <div class="ws-head-fields">
         <span class="ws-field"><b>Name</b><i></i></span>
@@ -210,14 +210,8 @@ BODY = f"""  <main id="main" class="mx-auto max-w-page px-4 py-6 sm:px-6 lg:px-8
                 </div>
                 <div>
                   <label for="set-count" class="mb-1.5 block text-sm font-medium text-body">Questions</label>
-                  <select id="set-count" data-setting="count" class="field">
-                    <option value="12">12</option>
-                    <option value="18">18</option>
-                    <option value="24">24</option>
-                    <option value="36">36 (default)</option>
-                    <option value="48">48</option>
-                    <option value="60">60</option>
-                  </select>
+                  <input id="set-count" type="number" min="1" max="60" step="1" data-setting="count" class="field" inputmode="numeric">
+                  <p class="mt-1 text-xs text-soft">Choose any whole number from 1 to 60.</p>
                 </div>
                 <div>
                   <label for="set-font" class="mb-1.5 block text-sm font-medium text-body">Text size</label>
@@ -445,16 +439,16 @@ BODY = f"""  <main id="main" class="mx-auto max-w-page px-4 py-6 sm:px-6 lg:px-8
           <div class="card p-5">
             <h2 class="font-display text-lg font-bold">Quick switch</h2>
             <div class="mt-3 grid grid-cols-5 gap-1.5">
-              <a href="practice.html?year=2&amp;level=medium" class="rounded-md border border-line bg-surface py-2 text-center text-sm font-bold text-body hover:border-accent hover:bg-accent-soft">2</a>
-              <a href="practice.html?year=3&amp;level=medium" class="rounded-md border border-line bg-surface py-2 text-center text-sm font-bold text-body hover:border-accent hover:bg-accent-soft">3</a>
-              <a href="practice.html?year=4&amp;level=medium" class="rounded-md border border-line bg-surface py-2 text-center text-sm font-bold text-body hover:border-accent hover:bg-accent-soft">4</a>
-              <a href="practice.html?year=5&amp;level=medium" class="rounded-md border border-line bg-surface py-2 text-center text-sm font-bold text-body hover:border-accent hover:bg-accent-soft">5</a>
-              <a href="practice.html?year=6&amp;level=medium" class="rounded-md border border-line bg-surface py-2 text-center text-sm font-bold text-body hover:border-accent hover:bg-accent-soft">6</a>
+              <a href="practice.html?year=2&amp;level=medium" data-quick-year="2" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-accent hover:bg-accent-soft">Year 2</a>
+              <a href="practice.html?year=3&amp;level=medium" data-quick-year="3" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-accent hover:bg-accent-soft">Year 3</a>
+              <a href="practice.html?year=4&amp;level=medium" data-quick-year="4" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-accent hover:bg-accent-soft">Year 4</a>
+              <a href="practice.html?year=5&amp;level=medium" data-quick-year="5" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-accent hover:bg-accent-soft">Year 5</a>
+              <a href="practice.html?year=6&amp;level=medium" data-quick-year="6" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-accent hover:bg-accent-soft">Year 6</a>
             </div>
             <div class="mt-2 grid grid-cols-3 gap-1.5">
-              <a href="practice.html?year=5&amp;level=easy" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-warn hover:bg-warn-soft">Easy</a>
-              <a href="practice.html?year=5&amp;level=medium" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-warn hover:bg-warn-soft">Medium</a>
-              <a href="practice.html?year=5&amp;level=hard" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-warn hover:bg-warn-soft">Hard</a>
+              <a href="practice.html?year=5&amp;level=easy" data-quick-level="easy" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-warn hover:bg-warn-soft">Easy</a>
+              <a href="practice.html?year=5&amp;level=medium" data-quick-level="medium" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-warn hover:bg-warn-soft">Medium</a>
+              <a href="practice.html?year=5&amp;level=hard" data-quick-level="hard" class="rounded-md border border-line bg-surface py-2 text-center text-xs font-bold text-body hover:border-warn hover:bg-warn-soft">Hard</a>
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Printable one-page reference sheets (downloads/*.html)."""
-from shell import THEME_BOOT, GOOGLE_ANALYTICS, SUN_ICON, MOON_ICON, _search_form
+from shell import SITE_URL, THEME_BOOT, GOOGLE_ANALYTICS, SUN_ICON, MOON_ICON, _search_form
 
 SHEET_SHELL = """<!doctype html>
 <html lang="en-GB">
@@ -9,7 +9,7 @@ SHEET_SHELL = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} · Math It! printable reference sheet</title>
   <meta name="description" content="{description}">
-  <link rel="canonical" href="https://www.mathit.co.uk/downloads/{filename}">
+  <link rel="canonical" href="{site_url}/downloads/{filename}">
   <meta name="robots" content="index, follow">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../assets/css/app.css">
@@ -75,7 +75,7 @@ SHEET_SHELL = """<!doctype html>
       </div>
       <div class="text-right">
         <p class="font-display text-lg font-bold text-strong">Math It!</p>
-        <p class="text-[0.7rem] uppercase tracking-wider text-soft">www.mathit.co.uk</p>
+        <p class="text-[0.7rem] uppercase tracking-wider text-soft">{site_host}</p>
       </div>
     </header>
 
@@ -464,6 +464,8 @@ PRINT_CSS = {
 def build():
     return {
         s["filename"]: SHEET_SHELL.format(
+            site_url=SITE_URL,
+            site_host=SITE_URL.removeprefix("https://"),
             google_analytics=GOOGLE_ANALYTICS,
             search_form=_search_form("sheet-site-search"),
             theme_boot=THEME_BOOT, sun=SUN_ICON, moon=MOON_ICON,

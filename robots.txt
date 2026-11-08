@@ -11,4 +11,4 @@ Allow: /
 User-agent: AdsBot-Google
 Allow: /
 
-Sitemap: https://www.mathit.co.uk/sitemap.xml
+Sitemap: https://mathit-edward.netlify.app/sitemap.xml

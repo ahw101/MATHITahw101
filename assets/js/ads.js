@@ -74,7 +74,8 @@
      */
     slots: {
       'home-leaderboard':         '7907701095',   // below the hero, 970×90 / responsive
-      'home-infeed':              '4831190589',   // between content blocks on the home page
+      'home-infeed':              { slot: '4831190589', format: 'fluid', layoutKey: '' },
+      'home-multiplex':           { slot: '', format: 'autorelaxed' },
       'practice-sidebar-top':     '1254662839',   // 300×250 beside the worksheet
       'practice-sidebar-bottom':  '8426575843',   // 300×600 skyscraper beside the worksheet
       'practice-footer':          '7648925619',   // responsive unit under the worksheet
@@ -136,11 +137,14 @@
       const slotId = typeof def === 'string' ? def : def.slot;
       const format = (def && def.format) || 'auto';
       const fullWidth = (def && def.fullWidth === false) ? 'false' : 'true';
+      const layout = def && def.layout ? ' data-ad-layout="' + def.layout + '"' : '';
+      const layoutKey = def && def.layoutKey ? ' data-ad-layout-key="' + def.layoutKey + '"' : '';
       wrap.innerHTML =
         '<ins class="adsbygoogle" style="display:block;min-height:' + minH + '"' +
         ' data-ad-client="' + AdsConfig.publisherId + '"' +
         ' data-ad-slot="' + slotId + '"' +
         ' data-ad-format="' + format + '"' +
+        layout + layoutKey +
         ' data-full-width-responsive="' + fullWidth + '"></ins>';
     }
     try {

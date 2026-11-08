@@ -450,6 +450,7 @@ BODY = f"""  <main id="main">
     <!-- ===================== AD: IN-FEED ===================== -->
     <div class="mx-auto max-w-page px-4 pb-8 sm:px-6 lg:px-8">
       {ad("home-infeed", size="728 × 90", shape="leaderboard")}
+      {ad("home-multiplex", size="responsive", shape="box", extra="mt-8")}
     </div>
 
     <!-- ===================== FAQ ===================== -->

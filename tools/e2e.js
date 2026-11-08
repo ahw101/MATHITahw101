@@ -30,6 +30,9 @@ let failures = 0;
   assert((await p.$eval('[data-crumb-current]',e=>e.textContent)).includes('Year 2'), 'breadcrumb = Year 2 · Easy');
   const y2topics = await p.$$eval('[data-topic]', e=>e.length);
   assert(y2topics>=8 && y2topics<16, 'Year 2 exposes only age-appropriate topics ('+y2topics+')');
+  await p.goto('http://localhost:8080/practice.html?year=3&level=medium',{waitUntil:'networkidle0'});
+  const y3HardHref = await p.$eval('[data-quick-level="hard"]', e=>e.getAttribute('href'));
+  assert(y3HardHref.includes('year=3') && y3HardHref.includes('level=hard'), 'Year 3 quick switch links to Year 3 Hard');
 
   console.log('\n— seeded sheets are reproducible —');
   await p.goto('http://localhost:8080/practice.html?year=5&level=medium&s=424242',{waitUntil:'networkidle0'});
@@ -82,9 +85,12 @@ let failures = 0;
   await p.click('[data-drawer-toggle]');
   await new Promise(r=>setTimeout(r,250));
   assert(!(await p.$eval('[data-drawer]', e=>e.classList.contains('hidden'))), 'drawer opens');
-  await p.select('[data-setting="count"]','48');
+  await p.$eval('[data-setting="count"]', e=>{ e.value='48'; e.dispatchEvent(new Event('change',{bubbles:true})); });
   await new Promise(r=>setTimeout(r,400));
   assert((await p.$$('.q-item')).length===48, 'question count → 48');
+  await p.$eval('[data-setting="count"]', e=>{ e.value='41'; e.dispatchEvent(new Event('change',{bubbles:true})); });
+  await new Promise(r=>setTimeout(r,400));
+  assert((await p.$$('.q-item')).length===41, 'custom question count → 41');
   await p.select('[data-setting="year"]','3');
   await new Promise(r=>setTimeout(r,400));
   assert((await p.$eval('[data-crumb-current]',e=>e.textContent)).includes('Year 3'), 'year switch rebuilds sheet');
@@ -204,6 +210,15 @@ let failures = 0;
     return out;
   }, mode);
   await p.emulateMediaType('print');
+  const overlayHidden = await p.evaluate(()=>{
+    const overlay=document.createElement('div');
+    overlay.className='test-google-privacy';
+    document.body.appendChild(overlay);
+    const hidden=getComputedStyle(overlay).display==='none';
+    overlay.remove();
+    return hidden;
+  });
+  assert(overlayHidden, 'print hides body-level Google privacy overlays');
   const ws = await printed('worksheet');
   assert(ws.sheet && !ws.key && !ws.set, 'worksheet mode → questions only');
   assert(!ws.nav && !ws.ads && !ws.aside, 'print strips nav, ads and sidebar');
@@ -291,12 +306,12 @@ let failures = 0;
     const meta = await p.evaluate(()=>({
       title: document.title.length,
       desc: (document.querySelector('meta[name=description]')||{}).content?.length||0,
-      canonical: !!document.querySelector('link[rel=canonical]'),
+      canonical: (document.querySelector('link[rel=canonical]')||{}).href||'',
       h1: document.querySelectorAll('h1').length,
       og: !!document.querySelector('meta[property="og:image"]'),
       ld: document.querySelectorAll('script[type="application/ld+json"]').length,
     }));
-    assert(meta.title>20 && meta.desc>80 && meta.canonical && meta.h1===1 && meta.og,
+    assert(meta.title>20 && meta.desc>80 && meta.canonical.startsWith('https://mathit-edward.netlify.app/') && meta.h1===1 && meta.og,
       u+' → title '+meta.title+'ch, desc '+meta.desc+'ch, 1×h1, og, '+meta.ld+' jsonld');
   }
   const ld = await p.evaluate(()=>JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent));
