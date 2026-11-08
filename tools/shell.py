@@ -40,6 +40,15 @@ ADSENSE_CLIENT = "ca-pub-9904590475432919"
 ADSENSE = f"""<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_CLIENT}"
           crossorigin="anonymous"></script>"""
 
+GOOGLE_ANALYTICS_ID = "G-950CQVFVRS"
+GOOGLE_ANALYTICS = f"""<script async src="https://www.googletagmanager.com/gtag/js?id={GOOGLE_ANALYTICS_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{GOOGLE_ANALYTICS_ID}');
+  </script>"""
+
 # Simple Analytics — cookie-free, no personal data, no consent banner needed.
 ANALYTICS = """<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
   <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>"""
@@ -92,6 +101,22 @@ def _nav_links(current, mobile=False, pre=""):
     return "\n          ".join(out)
 
 
+def _search_form(input_id):
+    return f"""<form action="https://www.google.com/search" method="get" role="search"
+        class="site-search">
+      <input type="hidden" name="sitesearch" value="www.mathit.co.uk">
+      <label class="sr-only" for="{input_id}">Search Math It!</label>
+      <input id="{input_id}" type="search" name="q" placeholder="Search"
+             class="site-search-input">
+      <button type="submit" class="site-search-button" aria-label="Search">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5"></circle>
+          <path d="m13 13 4 4"></path>
+        </svg>
+      </button>
+    </form>"""
+
+
 def header(current, pre=""):
     return f"""  <header class="site-header sticky top-0 z-40 border-b border-line bg-canvas/95 backdrop-blur supports-[backdrop-filter]:bg-canvas/80">
     <div class="mx-auto flex max-w-page items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
@@ -103,7 +128,11 @@ def header(current, pre=""):
         </span>
       </a>
 
-      <nav class="ml-auto hidden items-center gap-1 md:flex" aria-label="Primary">
+      <div class="site-search-desktop">
+        {_search_form("desktop-site-search")}
+      </div>
+
+      <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
           {_nav_links(current, pre=pre)}
       </nav>
 
@@ -125,6 +154,7 @@ def header(current, pre=""):
     </div>
 
     <div id="mobile-nav" data-nav-panel class="hidden border-t border-line bg-surface px-4 py-3 md:hidden">
+      <div class="mb-3">{_search_form("mobile-site-search")}</div>
       <nav class="flex flex-col gap-1" aria-label="Mobile">
           {_nav_links(current, mobile=True, pre=pre)}
         <a href="{pre}practice.html" class="btn btn-primary mt-2 w-full">Make a worksheet</a>
@@ -280,9 +310,11 @@ def page(*, filename, title, description, body, current, keywords="",
   <link rel="apple-touch-icon" sizes="180x180" href="{pre}assets/img/icon-180.png">
   <link rel="manifest" href="{pre}site.webmanifest">
   <link rel="stylesheet" href="{pre}assets/css/app.css">{extra_head}{jl}
+  <link rel="stylesheet" href="{pre}assets/css/site-overrides.css">
 
   <meta name="google-adsense-account" content="{ADSENSE_CLIENT}">
   {ADSENSE}
+  {GOOGLE_ANALYTICS}
 
   {THEME_BOOT}
 </head>

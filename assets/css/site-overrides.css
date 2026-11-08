@@ -1,0 +1,95 @@
+.site-search-desktop {
+  display: none;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.site-search-sheet {
+  width: min(100%, 12rem);
+}
+
+.site-search {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  border: 1px solid rgb(var(--c-line));
+  border-radius: .5rem;
+  background: rgb(var(--c-surface));
+  box-shadow: 0 1px 2px rgb(var(--c-shadow) / .08);
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.site-search:focus-within {
+  border-color: rgb(var(--c-accent));
+  box-shadow: 0 0 0 3px rgb(var(--c-accent) / .16);
+}
+
+.site-search-input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: .55rem .75rem;
+  color: rgb(var(--c-body));
+  font: inherit;
+  font-size: .875rem;
+}
+
+.site-search-input::placeholder {
+  color: rgb(var(--c-faint));
+}
+
+.site-search-button {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  border-radius: .4rem;
+  background: transparent;
+  color: rgb(var(--c-soft));
+  cursor: pointer;
+}
+
+.site-search-button:hover {
+  background: rgb(var(--c-raise));
+  color: rgb(var(--c-strong));
+}
+
+.site-search-button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .site-search-desktop {
+    display: block;
+    width: 9rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-search-desktop {
+    width: 12rem;
+  }
+}
+
+@media print {
+  .ad-wrap,
+  .ad-slot,
+  ins.adsbygoogle,
+  .google-auto-placed,
+  [data-google-container-id],
+  iframe[id*="google"],
+  iframe[id^="aswift"],
+  iframe[src*="googlesyndication.com"],
+  iframe[src*="doubleclick.net"],
+  div[id^="google_ads"],
+  div[id^="aswift"],
+  body > div[style*="position: fixed"] {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}

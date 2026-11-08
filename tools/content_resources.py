@@ -184,6 +184,10 @@ BODY = f"""  <main id="main">
 
 {_guide_sections()}
 
+          <div class="my-12">
+            {ad("resources-inarticle", size="728 × 90", shape="leaderboard")}
+          </div>
+
           <hr class="my-14 border-line">
 
           <!-- ---------- DOWNLOADS ---------- -->

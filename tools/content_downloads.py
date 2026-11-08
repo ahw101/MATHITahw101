@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Printable one-page reference sheets (downloads/*.html)."""
-from shell import THEME_BOOT, SUN_ICON, MOON_ICON
+from shell import THEME_BOOT, GOOGLE_ANALYTICS, SUN_ICON, MOON_ICON, _search_form
 
 SHEET_SHELL = """<!doctype html>
 <html lang="en-GB">
@@ -13,6 +13,7 @@ SHEET_SHELL = """<!doctype html>
   <meta name="robots" content="index, follow">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../assets/css/app.css">
+  <link rel="stylesheet" href="../assets/css/site-overrides.css">
   <style>
     /* Every reference sheet must print on exactly ONE side of A4. The shared
        print rules in app.css strip the chrome; these tighten the internals.
@@ -52,6 +53,7 @@ SHEET_SHELL = """<!doctype html>
 {print_css}    }}
   </style>
 
+  {google_analytics}
   {theme_boot}
 </head>
 <body class="bg-canvas">
@@ -59,6 +61,7 @@ SHEET_SHELL = """<!doctype html>
     <div class="mx-auto flex max-w-[210mm] flex-wrap items-center gap-3 px-4 py-3">
       <a href="../resources.html" class="btn btn-sm btn-ghost">← All printables</a>
       <span class="text-sm font-semibold text-body">{title}</span>
+      <div class="site-search-sheet">{search_form}</div>
       <button type="button" data-theme-toggle class="icon-btn ml-auto h-8 w-8" aria-label="Switch between light and dark">{sun}{moon}</button>
       <button type="button" data-print-trigger="worksheet" class="btn btn-sm btn-primary">Print this sheet</button>
     </div>
@@ -461,6 +464,8 @@ PRINT_CSS = {
 def build():
     return {
         s["filename"]: SHEET_SHELL.format(
+            google_analytics=GOOGLE_ANALYTICS,
+            search_form=_search_form("sheet-site-search"),
             theme_boot=THEME_BOOT, sun=SUN_ICON, moon=MOON_ICON,
             print_css=PRINT_CSS.get(s["filename"], ""), **s)
         for s in SHEETS

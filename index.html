@@ -33,10 +33,18 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="assets/css/app.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.mathit.co.uk/#organization","name":"Math It!","url":"https://www.mathit.co.uk/","logo":{"@type":"ImageObject","url":"https://www.mathit.co.uk/assets/img/og-image.png"},"email":"hello@mathit.co.uk","description":"Free mental maths worksheet generator and topic guides for primary school children in Years 2 to 6."},{"@type":"WebSite","@id":"https://www.mathit.co.uk/#website","url":"https://www.mathit.co.uk/","name":"Math It!","description":"Mental maths worksheets for Years 2 to 6","publisher":{"@id":"https://www.mathit.co.uk/#organization"},"inLanguage":"en-GB"},{"@type":"WebApplication","name":"Math It!","url":"https://www.mathit.co.uk/practice.html","applicationCategory":"EducationalApplication","operatingSystem":"Any modern web browser","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"description":"Generates unlimited printable mental maths worksheets for Years 2 to 6, marked instantly in the browser.","educationalLevel":"Primary education, Key Stage 1 and Key Stage 2","audience":{"@type":"EducationalAudience","educationalRole":["student","teacher","parent"]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Math It! really free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every worksheet, every year group and every topic guide is free, with no account, no email address and no trial period. The site is supported by a small number of clearly labelled adverts, which is what keeps it free for schools and families."}},{"@type":"Question","name":"Which curriculum does Math It! follow?","acceptedAnswer":{"@type":"Answer","text":"The question bank is written against the National Curriculum for mathematics in England, covering Key Stage 1 (Year 2) through the whole of Key Stage 2 (Years 3 to 6). The topics, number ranges and written methods follow the statutory programmes of study, so the content maps cleanly onto most primary schemes of work. It also suits learners following the Curriculum for Wales, the Northern Ireland curriculum and comparable Year 2\u20136 or Grade 1\u20135 content elsewhere."}},{"@type":"Question","name":"Do I need to create an account?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing is stored on a server. Your chosen year group, difficulty and topic selections are remembered in your own browser using local storage, and you can clear them at any time from your browser settings."}},{"@type":"Question","name":"How are the questions generated?","acceptedAnswer":{"@type":"Answer","text":"Every sheet is built in your browser from a library of more than thirty question types. Numbers are chosen at random inside ranges appropriate to the year group and difficulty, so you can press New all day and rarely meet the same sheet twice."}},{"@type":"Question","name":"Can two children get the same worksheet?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each sheet has a number, shown next to the title and stored in the page link. Share that link and anyone who opens it receives an identical worksheet, which makes whole-class marking straightforward."}},{"@type":"Question","name":"How do I print just the answers?","acceptedAnswer":{"@type":"Answer","text":"Use the Print menu on the worksheet page. You can print the questions only, the answer key only, or both with the key on its own page. There is also a class-set option that prints several different sheets in one job."}},{"@type":"Question","name":"How do I type a fraction or a remainder?","acceptedAnswer":{"@type":"Answer","text":"Type fractions with a slash, such as 3/4, and mixed numbers with a space, such as 1 1/2. Remainders accept 12 r 3, 12r3 or 12 remainder 3. Equivalent answers are accepted, so 6/8 and 0.75 both mark correct for three quarters."}},{"@type":"Question","name":"Is there a dark mode?","acceptedAnswer":{"@type":"Answer","text":"Yes. The sun and moon button in the header flips between light and dark, and the footer has an Auto setting that follows your device. Printing always uses black on white whichever theme you are using."}},{"@type":"Question","name":"Is the site suitable for children with additional needs?","acceptedAnswer":{"@type":"Answer","text":"There is a high-contrast mode, three text sizes and a compact density option in the settings drawer, and every control is reachable from the keyboard with visible focus outlines. Answer boxes are labelled for screen readers with the full question text."}},{"@type":"Question","name":"Does Math It! collect personal data from children?","acceptedAnswer":{"@type":"Answer","text":"No. We do not ask for names, email addresses or any other personal information, and we do not use analytics cookies that identify individuals. Advertising is served by Google AdSense; our privacy notice explains exactly what that involves and how to control it."}},{"@type":"Question","name":"How many questions are on a sheet?","acceptedAnswer":{"@type":"Answer","text":"Thirty-six by default, laid out as two columns of eighteen, which is about ten to fifteen minutes of work for most children. You can set the count to anything from twelve to sixty in the worksheet settings."}}]}]}</script>
+  <link rel="stylesheet" href="assets/css/site-overrides.css">
 
   <meta name="google-adsense-account" content="ca-pub-9904590475432919">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9904590475432919"
           crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-950CQVFVRS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-950CQVFVRS');
+  </script>
 
   <script>
   (function () {
@@ -75,7 +83,23 @@
         </span>
       </a>
 
-      <nav class="ml-auto hidden items-center gap-1 md:flex" aria-label="Primary">
+      <div class="site-search-desktop">
+        <form action="https://www.google.com/search" method="get" role="search"
+        class="site-search">
+      <input type="hidden" name="sitesearch" value="www.mathit.co.uk">
+      <label class="sr-only" for="desktop-site-search">Search Math It!</label>
+      <input id="desktop-site-search" type="search" name="q" placeholder="Search"
+             class="site-search-input">
+      <button type="submit" class="site-search-button" aria-label="Search">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5"></circle>
+          <path d="m13 13 4 4"></path>
+        </svg>
+      </button>
+    </form>
+      </div>
+
+      <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
           <a href="index.html" class="nav-link" aria-current="page">Home</a>
           <a href="practice.html" class="nav-link">Worksheets</a>
           <a href="tables.html" class="nav-link">Times tables</a>
@@ -102,6 +126,19 @@
     </div>
 
     <div id="mobile-nav" data-nav-panel class="hidden border-t border-line bg-surface px-4 py-3 md:hidden">
+      <div class="mb-3"><form action="https://www.google.com/search" method="get" role="search"
+        class="site-search">
+      <input type="hidden" name="sitesearch" value="www.mathit.co.uk">
+      <label class="sr-only" for="mobile-site-search">Search Math It!</label>
+      <input id="mobile-site-search" type="search" name="q" placeholder="Search"
+             class="site-search-input">
+      <button type="submit" class="site-search-button" aria-label="Search">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5"></circle>
+          <path d="m13 13 4 4"></path>
+        </svg>
+      </button>
+    </form></div>
       <nav class="flex flex-col gap-1" aria-label="Mobile">
           <a href="index.html" class="block w-full text-left nav-link" aria-current="page">Home</a>
           <a href="practice.html" class="block w-full text-left nav-link">Worksheets</a>
